@@ -1,7 +1,5 @@
 # Tmux ZSH Environment
 
-Share environmental variables more seamlessly between tmux and ZSH.
-
 Tmux includes an `update-environment` command that means that any new shells
 recieve the variables in `update-environment` when they are loaded. However,
 existing shells do not recieve these variables, meaning that things like
@@ -17,8 +15,7 @@ environment).
 By default, tmux updates the following variables:
 
 ```shell
-DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID
-XAUTHORITY
+DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY
 ```
 
 If these look good to you, this plugin will work out of the box to keep those
