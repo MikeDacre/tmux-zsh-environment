@@ -6,11 +6,10 @@ existing shells do not recieve these variables, meaning that things like
 `DISPLAY` become out-of-date when sshing into a machine and connecting to an
 existing session.
 
-This ZSH plugin adds a lightweight `precmd` function that hooks into ZSH,
-runs on every new prompt, and updates the current shell environement with any
-variables loaded in the tmux `show-environment` array (this includes only those
-variables that were both set by `update-environment` and set in the calling
-environment).
+This ZSH plugin adds a lightweight preexec hook function that runs on every new
+prompt/execution, and updates the current shell environement with any variables
+loaded in the tmux `show-environment` array (this includes only those variables
+that were both set by `update-environment` and set in the calling environment).
 
 By default, tmux updates the following variables:
 

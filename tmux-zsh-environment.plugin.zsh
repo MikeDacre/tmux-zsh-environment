@@ -23,11 +23,11 @@ fi
 # connected.
 if [ -n "$TMUX" ] && tmux ls >/dev/null 2>/dev/null; then
     # Update shell environment from variables, don't unset
-    _tmux_zsh_env__precmd() {
+    _tmux_zsh_env__preexec() {
         eval "$(tmux show-environment -s | grep -v "^unset")"
     }
 
     # Add the function as a precmd, to be run at every new prompt
     autoload -Uz add-zsh-hook
-    add-zsh-hook precmd _zsh_title__precmd
+    add-zsh-hook precmd _zsh_title__preexec
 fi
