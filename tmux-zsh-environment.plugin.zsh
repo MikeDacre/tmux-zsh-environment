@@ -8,9 +8,9 @@
 # in $TMUX from the parent session being set without tmux being
 # connected.
 if [ -n "$TMUX" ] && tmux ls >/dev/null 2>/dev/null; then
-    # Update shell environment from variables
+    # Update shell environment from variables, don't unset
     _tmux_zsh_env__precmd() {
-        eval "${tmux show-environment -s}"
+        eval "$(tmux show-environment -s | grep -v "^unset")"
     }
 
     # Add the function as a precmd, to be run at every new prompt
